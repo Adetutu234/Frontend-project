@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between bg-slate-700/10'>
+    <div className='flex justify-between bg-slate-700 p-5'>
       <div className='flex gap-5'>
         <img src="" alt="" />
         <p>FashionHub</p>
