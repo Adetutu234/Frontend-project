@@ -1,0 +1,14 @@
+homepage
+
+      herosection //
+
+      todasy deals 3
+      bundle deals 2, super deals2, big save 2
+
+      herosection
+
+      shop by category
+      grid 
+
+      more to love //
+      columns
