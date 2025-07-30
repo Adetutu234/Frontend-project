@@ -17,8 +17,8 @@ const Bags = ({bags}) => {
       </div>
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 pt-6'>
         {bags.map((bag)=>(
-              <CategoryCard key={bag.id} {...bag}/>))
-        }
+              <CategoryCard key={bag.id} {...bag}/>
+          ))}
       </div>
     </div>
   )

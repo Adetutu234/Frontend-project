@@ -3,8 +3,15 @@ import CategoryCard from '../components/CategoryCard'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Deals from '../components/Deals'
+import { useMemo } from 'react'
 
-const Homepage = ({products,clothes}) => {
+const Homepage = ({products,clothes,allProducts}) => {
+const featured = useMemo(() => {
+  return allProducts
+    .filter(product => product.isFeatured)
+    .sort(() => Math.random() - 0.5)
+    .slice(0,6)
+}, [allProducts])
   return (
     <div className='lg:p-5'>
       {/* herosection */}
@@ -19,15 +26,16 @@ const Homepage = ({products,clothes}) => {
       </div>
 
       {/* todays deal */}
-      <div className='grid lg:grid-cols-3  gap-2 p-10 bg-white'>
-          {products.slice(0, 6).map((product) => (
-            <Link to={`/products/${product.id}`} key={product.id}>
-              <Deals {...product} className="h-12"/>
-            </Link>
+      <div>
+        <h1 className='text-center font-bold text-3xl'>Todays Top Deals</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 p-5'>
+          {featured.slice(0, 6).map((item) => (
+            <Deals key={item.id} {...item} />
           ))}
+        </div>
       </div>
 
-      {/* deals/categories */}
+      {/* categories */}
       {/* left */}
       <h1 className='text-center font-semibold text-4xl pb-3'>Shop by category</h1>
       <div className='grid lg:grid-cols-2 gap-2 p-10'>
@@ -47,38 +55,50 @@ const Homepage = ({products,clothes}) => {
 
       {/* right */}
         <div className='grid grid-cols-2 gap-2'>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Electronics</p> */}
-            <img src="https://goodmockups.com/wp-content/uploads/2022/02/Free-MacBook-Pro-16%E2%80%B3-iPhone-13-Pro-Max-Responsive-Website-Mockup-PSD.jpg" alt="" className='h-40 w-full'/>
-          </div>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Shoes</p> */}
-            <img src="https://media.istockphoto.com/id/942926448/photo/set-of-colored-womens-shoes-on-beige-background.jpg?s=612x612&w=0&k=20&c=OKPtxR0axe8D9mnBEdY63NQT9hiWwN7b8BGjj-YYhBg=" alt="" className='h-40 w-full'/>
-          </div>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Skincare</p> */}
-            <img src="https://www.skincare.com/-/media/project/loreal/brand-sites/sdc/americas/us/articles/2020/02_february/05-galentines-day-gifts/valentines-day-skincare-gifts-for-women-hero-scd-020520.jpg" alt="" className='h-40 w-full'/>
-          </div>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Clothing</p> */}
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsb3RoaW5nfGVufDB8fDB8fHww" alt="" className='h-40 w-full'/>
-          </div>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Fitness</p> */}
-            <img src="https://media.istockphoto.com/id/625739874/photo/heavy-weight-exercise.jpg?s=612x612&w=0&k=20&c=B1uzJW1DBei2Rx5hnt139tt9dt3L7TbKrpgwbMR-LrI=" alt="" className='h-40 w-full'/>
-          </div>
-          <div className=' hover:shadow-lg hover:drop-shadow-lg'>
-            {/* <p>Phones</p> */}
-            <img src="https://t4.ftcdn.net/jpg/02/02/39/07/360_F_202390749_8T273Qalaj7HwjvW6W4VSiUsNb753vd2.jpg" alt="" className='h-40 w-full'/>
-          </div>
+          <Link to="/electronics">
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Electronics</p>
+              <img src="https://goodmockups.com/wp-content/uploads/2022/02/Free-MacBook-Pro-16%E2%80%B3-iPhone-13-Pro-Max-Responsive-Website-Mockup-PSD.jpg" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
+          <Link to='/shoes'>
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Shoes</p>
+              <img src="https://media.istockphoto.com/id/942926448/photo/set-of-colored-womens-shoes-on-beige-background.jpg?s=612x612&w=0&k=20&c=OKPtxR0axe8D9mnBEdY63NQT9hiWwN7b8BGjj-YYhBg=" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
+          <Link to='/beauty'>
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Skincare</p>
+              <img src="https://www.skincare.com/-/media/project/loreal/brand-sites/sdc/americas/us/articles/2020/02_february/05-galentines-day-gifts/valentines-day-skincare-gifts-for-women-hero-scd-020520.jpg" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
+          <Link to='/clothes'>
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Clothing</p>
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsb3RoaW5nfGVufDB8fDB8fHww" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
+          <Link to='/fitness'>
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Fitness</p>
+              <img src="https://media.istockphoto.com/id/625739874/photo/heavy-weight-exercise.jpg?s=612x612&w=0&k=20&c=B1uzJW1DBei2Rx5hnt139tt9dt3L7TbKrpgwbMR-LrI=" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
+          <Link to='/bags'>
+            <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
+              <p className='absolute font-bold text-xl top-3 right-3'>Fashion</p>
+              <img src="https://t4.ftcdn.net/jpg/02/02/39/07/360_F_202390749_8T273Qalaj7HwjvW6W4VSiUsNb753vd2.jpg" alt="" className='h-40 w-full'/>
+            </div>
+          </Link>
         </div>
       </div>
 
       {/* more to love */}
       <h1 className='text-center font-bold text-4xl pb-3'>More to love</h1>
-      <div className='grid grid-cols-2 lg:grid-cols-5 gap-2 p-10'>
+      <div className='grid grid-cols-2 lg:grid-cols-6 gap-2 p-10'>
         {products.map((product)=>(
-          <Link to={`/products/${product.id}`} key={product.id}>
+          <Link to={`/product/${product.id}`} key={product.id}>
             <CategoryCard key={product.id} {...product} />
           </Link>
         ))}

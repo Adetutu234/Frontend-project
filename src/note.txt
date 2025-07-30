@@ -12,3 +12,9 @@ homepage
 
       more to love //
       columns
+
+
+
+      isfeatured(filter)
+      random/sort
+      linethrough

@@ -7,7 +7,7 @@ const Header = () => {
     <div className='bg-black p-3 text-white lg:block hidden'>
       <ul className='flex justify-around'>
         <Link to='/' className='uppercase text-sm hover:underline hover:cursor-pointer'>home </Link>
-        <li className='uppercase text-sm hover:underline hover:cursor-pointer'>shop</li>
+        <Link to='/shop' className='uppercase text-sm hover:underline hover:cursor-pointer'>shop</Link>
         <div className='flex gap-2 items-center'>
             <Link to='/bags' className='uppercase text-sm hover:underline hover:cursor-pointer'>accessories & bags</Link>
             <CaretDown size={15} className=''/>
@@ -25,11 +25,11 @@ const Header = () => {
             <CaretDown size={15} className=''/>
         </div>
         <div className='flex gap-2 items-center'>
-            <Link to='/sports' className='uppercase text-sm hover:underline hover:transition-all hover:cursor-pointer'>sports and fitness</Link>
+            <Link to='/fitness' className='uppercase text-sm hover:underline hover:transition-all hover:cursor-pointer'>sports and fitness</Link>
             <CaretDown size={15} className=''/>
         </div>
         <div className='flex gap-2 items-center'>
-            <li className='uppercase text-sm hover:underline hover:cursor-pointer'>mens fashion</li>
+            <Link to='/electronics' className='uppercase text-sm hover:underline hover:cursor-pointer'>electronics</Link>
             <CaretDown size={15} className=''/>
         </div>
         <Link to='/sales' className='uppercase text-sm hover:underline hover:cursor-pointer'>sales</Link>
