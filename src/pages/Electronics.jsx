@@ -1,19 +1,19 @@
 import React from 'react'
 import CategoryCard from '../components/CategoryCard'
 
-const Clothes = ({clothes, allProducts}) => {
+const Electronics = ({electronics,allProducts}) => {
       // Shuffle allProducts and get 5 random items for recommendations
   const getRandomItems = (arr, count) => {
     const shuffled = [...arr].sort(() => 0.5 - Math.random())
     return shuffled.slice(0, count)
   }
   const recommended = getRandomItems(allProducts, 6)
-  return (    
-    <div className='flex flex-col p-7'>
-        <div className='text-center space-y-3'>
-            <h1 className='font-bold text-xl'>Clothing | Dresses, Tops, Skirts, Jumpsuits & more</h1>
-            <p className='text-sm lg:w-200 mx-auto'>Looking for a fashion update? You're in the right place. From crop tops, party dresses to evening gowns, jumpsuits and more, we have a clothing collection that will edge its way into your wardrobe. Complete your look with gorgeous finishing touches, from high heels and flats to statement bags and jewellery.</p>
-        <ul className='flex gap-10 lg:w-150 mx-auto text-sm'>
+  return (
+      <div className='flex flex-col p-7'>
+      <div className='text-center space-y-3'>
+        <h1 className='font-bold text-xl'>Electronics</h1>
+        <p className='text-sm lg:w-200 mx-auto'>A girl can never have too many shoes, which is why we have such an extensive collection for you to choose from. Inspired by new-season trends, we've got shoes for all of your fashion needs. Whatever the trend you're trying to emulate or create, SOJOEE is sure to have the perfect women's shoes for you. Shop NOW, we are your trusted online shoe shop in Lagos, Nigeria.</p>
+      <ul className='flex gap-10 lg:w-150 mx-auto text-sm'>
           <li className='text-red-900 font-semibold'>Shop by category</li>
           <li className='text-orange-700'>Bags&Purses</li>
           <li className='text-orange-700'>Jewelry</li>
@@ -21,10 +21,10 @@ const Clothes = ({clothes, allProducts}) => {
           <li className='text-orange-700'>Hair Clips</li>
         </ul>
       </div>
-    <div className='grid grid-cols-2 lg:grid-cols-5 gap-5 pt-6'>
-      {clothes.map((clothe)=>(
-        <CategoryCard key={clothe.id} {...clothe} />
-      ))}
+      <div className='grid grid-cols-2 lg:grid-cols-5 gap-5 pt-6'>
+        {electronics.map((electronic)=>(
+            <CategoryCard key={electronic.id} {...electronic}/>
+        ))}
     </div>
     {/*more to love  */}
     <div>
@@ -32,11 +32,11 @@ const Clothes = ({clothes, allProducts}) => {
         <div className='grid grid-cols-2 lg:grid-cols-6 gap-4 p-5'>
           {recommended.map((item) => (
             <CategoryCard key={item.id} {...item} />
-          ))}
-    </div>
+              ))}
+        </div>
     </div>
     </div>
   )
 }
 
-export default Clothes
+export default Electronics

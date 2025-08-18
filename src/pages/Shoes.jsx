@@ -1,7 +1,13 @@
 import React from 'react'
 import CategoryCard from '../components/CategoryCard'
 
-const Shoes = ({shoes}) => {
+const Shoes = ({shoes,allProducts}) => {
+      // Shuffle allProducts and get 5 random items for recommendations
+  const getRandomItems = (arr, count) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random())
+    return shuffled.slice(0, count)
+  }
+  const recommended = getRandomItems(allProducts, 6)
   return (
       <div className='flex flex-col p-7'>
       <div className='text-center space-y-3'>
@@ -15,10 +21,19 @@ const Shoes = ({shoes}) => {
           <li className='text-orange-700'>Hair Clips</li>
         </ul>
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-12 pt-6'>
+      <div className='grid grid-cols-2 lg:grid-cols-5 gap-5 pt-6'>
         {shoes.map((shoe)=>(
             <CategoryCard key={shoe.id} {...shoe}/>
         ))}
+    </div>
+    {/*more to love  */}
+    <div>
+      <h1 className='text-center font-bold text-3xl mt-10'>More To Love</h1>
+        <div className='grid grid-cols-2 lg:grid-cols-6 gap-4 p-5'>
+          {recommended.map((item) => (
+            <CategoryCard key={item.id} {...item} />
+              ))}
+        </div>
     </div>
     </div>
   )

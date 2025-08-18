@@ -6,38 +6,46 @@ const Footer = () => {
   return (
     <div>
       {/* top */}
-      <div className='grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-0 bg-black/78 text-white p-5 items-center'>
-        <div className='flex gap-3'>
-          <Envelope size={25} />
-          <div className='space-y-2'>
-            <p className='uppercase text-sm font-bold'>email support</p>
-            <p className='text-sm'>help@fashionhub.com</p>
-          </div>
+      <hr className='text-slate-700/70'/>
+      <div>
+        <div className='p-10 space-y-4 '>
+          <h1 className='text-slate-700/70 text-2xl font-semibold capitalize'>FashionHub Online Shopping in Nigeria - Best Shopping Site</h1>
+          <p className='text-sm text-slate-700/70'>FashionHub.com is Nigeria’s number one online Shopping destination.We pride ourselves in having everything you could possibly need for life and living at the best prices than anywhere else. Our access to Original Equipment Manufacturers and premium sellers gives us a wide range of products at very low prices. Some of our popular categories include electronics, mobile phones, computers, Fashion, home and kitchen, Building and construction materials and a whole lot more from premium brands. Some of our other categories include Food and drinks, automotive and industrial, books, musical equipment, babies and kids items, sports and fitness, to mention a few. To make your shopping experience swift and memorable, there are also added services like gift vouchers, consumer promotion activities across different categories and bulk purchases with hassle-free delivery. Enjoy free shipping rates for certain products and with the bulk purchase option, you can enjoy low shipping rates, discounted prices and flexible payment. When you shop on our platform, you can pay with your debit card or via KongaPay, which is a convenient and secured payment solution. Get the best of lifestyle services online. Don't miss out on the biggest sales online which takes place on special dates yearly. Don't miss out on our Valentine 2025. Buy CeraVe Facial Cleansers, CeraVe Skin Care, CeraVe Moisturizers, and more original Cerave & Garnier Products in Nigeria</p>
         </div>
-        <div className='flex gap-3'>
-            <Phone size={25} />
-          <div className='space-y-2'>
-            <p className='uppercase text-sm font-bold'>phone support</p>
-            <p className='text-sm'>07012334560, 02034567854</p>
+
+        <div className='grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-0 bg-black/78 text-white p-5 items-center'>
+          <div className='flex gap-3'>
+            <Envelope size={25} />
+            <div className='space-y-2'>
+              <p className='uppercase text-sm font-bold'>email support</p>
+              <p className='text-sm'>help@fashionhub.com</p>
+            </div>
           </div>
-        </div>
-        <div className='flex gap-3'>
-          <WhatsappLogo size={25} />
-          <div className='space-y-2'>
-            <p className='uppercase text-sm font-bold'>whatsapp</p>
-            <p className='text-sm'>09067456897</p>
+          <div className='flex gap-3'>
+              <Phone size={25} />
+            <div className='space-y-2'>
+              <p className='uppercase text-sm font-bold'>phone support</p>
+              <p className='text-sm'>07012334560, 02034567854</p>
+            </div>
           </div>
-        </div>
-        <div>
+          <div className='flex gap-3'>
+            <WhatsappLogo size={25} />
+            <div className='space-y-2'>
+              <p className='uppercase text-sm font-bold'>whatsapp</p>
+              <p className='text-sm'>09067456897</p>
+            </div>
+          </div>
           <div>
-            <p className='uppercase text-sm font-bold'>get latest deal</p>
-            <p className='text-sm'>Our best promotions sent to your inbox.</p>
+            <div>
+              <p className='uppercase text-sm font-bold'>get latest deal</p>
+              <p className='text-sm'>Our best promotions sent to your inbox.</p>
+            </div>
           </div>
-        </div>
-        <div>
-          <div className='flex'>
-            <input type="text" placeholder='Email Address' className='bg-white rounded-md text-black/80 w-40 rounded-r-none'/>
-            <Button text={'Subscribe'} className={'px-4 py-1 bg-blue-700 text-white w-fit rounded-md rounded-l-none'}/>
+          <div>
+            <div className='flex'>
+              <input type="text" placeholder='Email Address' className='bg-white rounded-md text-black/80 w-40 rounded-r-none'/>
+              <Button text={'Subscribe'} className={'px-4 py-1 bg-blue-700 text-white w-fit rounded-md rounded-l-none'}/>
+            </div>
           </div>
         </div>
       </div>

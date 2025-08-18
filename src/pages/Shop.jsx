@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 
 const Shop = ({allProducts }) => {
   return (
-    <div className='grid grid-cols-2 lg:grid-cols-6 gap-4 p-5'>
-      {allProducts.map((product) => (
-        <Link to={`/product/${product.id}`} key={product.id}>
-        <CategoryCard key={product.id} {...product} />
-        </Link>
-      ))}
+    <div>
+      <h1 className='capitalize font-bold text-4xl py-3 text-center'> shop</h1>
+      <div className='grid grid-cols-2 lg:grid-cols-5 gap-4 p-5'>
+        {allProducts.map((product) => (
+          <Link to={`/product/${product.id}`} key={product.id}>
+          <CategoryCard key={product.id} {...product} />
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

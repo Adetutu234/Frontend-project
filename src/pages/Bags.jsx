@@ -1,7 +1,15 @@
 import React from 'react'
 import CategoryCard from '../components/CategoryCard'
+// import Subcategory from '../components/Subcategory'
 
-const Bags = ({bags}) => {
+
+const Bags = ({bags, allProducts}) => {
+  // Shuffle allProducts and get 5 random items for recommendations
+  const getRandomItems = (arr, count) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random())
+    return shuffled.slice(0, count)
+  }
+  const recommended = getRandomItems(allProducts, 6)
   return (
     <div className='flex flex-col p-7'>
       <div className='text-center space-y-3 '>
@@ -14,11 +22,21 @@ const Bags = ({bags}) => {
           <li className='text-orange-700'>Sunglasses</li>
           <li className='text-orange-700'>Hair Clips</li>
         </ul>
+        {/* <p>{bags.subcategory}</p> */}
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 pt-6'>
+      <div className='grid grid-cols-2 lg:grid-cols-5 gap-5 pt-6'>
         {bags.map((bag)=>(
-              <CategoryCard key={bag.id} {...bag}/>
+          <CategoryCard key={bag.id} {...bag}/>
           ))}
+      </div>
+      {/*more to love  */}
+      <div>
+        <h1 className='text-center font-bold text-3xl mt-10'>More To Love</h1>
+        <div className='grid grid-cols-2 lg:grid-cols-6 gap-4 p-5'>
+          {recommended.map((item) => (
+            <CategoryCard key={item.id} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   )
