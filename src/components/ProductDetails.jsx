@@ -31,7 +31,7 @@ const ProductDetails = ({ allProducts }) => {
       <div className='grid lg:grid-cols-2'>
         {/* left */}
         <div className='pt-10'>
-          <img src={product.image} alt={product.name} className="w-120 p-10 h-fit mx-auto" />
+          <img src={product.image} alt={product.name} className="w-120 p-10 lg:h-fit mx-auto" />
         </div>
 
         {/* right */}
