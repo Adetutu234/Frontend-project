@@ -31,12 +31,12 @@ const ProductDetails = ({ allProducts }) => {
       <div className='grid lg:grid-cols-2'>
         {/* left */}
         <div className='pt-10'>
-          <img src={product.image} alt={product.name} className="w-120 p-10 lg:h-fit mx-auto object-contain" />
+          <img src={product.image} alt={product.name} className="w-120 lg:p-10 lg:h-fit mx-auto object-contain" />
         </div>
 
         {/* right */}
-        <div className='p-20 space-y-4'>
-          <h1 className='font-semibold text-4xl'>{product.name}</h1>
+        <div className='lg:p-20 p-10 space-y-4'>
+          <h1 className='font-semibold lg:text-4xl text-3xl'>{product.name}</h1>
           <div className='space-y-1 '>
             <p className='text-red-700 flex gap-2'><span className='text-black font-semibold'>Size:</span>
                 {product.sizes?.map((size, index) => (

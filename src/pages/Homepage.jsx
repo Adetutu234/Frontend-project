@@ -21,9 +21,9 @@ const featured2 = useMemo(() => {
   return (
     <div className='lg:p-5'>
       {/* herosection */}
-      <div className='flex flex-col lg:flex-row gap-5 p-5'>
-        <img src="https://buybetter.ng/wp-content/uploads/2025/06/Welcome-Discount-Banner-2-scaled-optimized.png" alt="" className='lg:w-[60%] object-fit lg:flex hidden'/>
-        <div className='grid grid-cols-2 lg:w-[40%]'>
+      <div className='flex flex-col lg:flex-row gap-5 lg:p-5'>
+        <img src="https://buybetter.ng/wp-content/uploads/2025/06/Welcome-Discount-Banner-2-scaled-optimized.png" alt="" className='lg:w-[60%] object-fit '/>
+        <div className='hidden lg:grid grid-cols-2 lg:w-[40%]'>
           <img src="https://t4.ftcdn.net/jpg/01/15/04/39/360_F_115043913_g00I2WhOKYresf7JId9GTTnNy50FBDRi.jpg" alt="" />
           <img src="https://img.pikbest.com/templates/20240618/sales-promo-template-for-exclusive-podium-products_10626584.jpg!w700wp" alt="" />
           <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/22562f79286847.5da1fe1fd2349.jpg" alt="" />
@@ -44,12 +44,13 @@ const featured2 = useMemo(() => {
       {/* categories */}
       {/* left */}
       <h1 className='text-center font-semibold text-4xl pb-3'>Shop by category</h1>
-      <div className='grid lg:grid-cols-2 gap-2 p-10'>
+      {/* top */}
+      <div className='grid lg:grid-cols-2 gap-2 lg:p-10 p-5'>
         <div className='bg-blue-300 lg:p-10 p-5 rounded-lg space-y-1'>
           <h1 className='font-bold text-3xl'>Diva</h1>
           <p className='font-semibold text-lg'>Your Fashion Choices</p>
           <Button text='Shop now' className='text-white px-6 py-2 bg-black w-fit'/>
-
+          {/* slice */}
           <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 pt-3 '>
             {clothes.slice(0, 3).map((clothe) => (
               <Link to={`/products/${clothe.id}`} key={clothe.id}>
@@ -60,7 +61,7 @@ const featured2 = useMemo(() => {
         </div>
 
       {/* right */}
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-2 gap-2 lg:pt-0 pt-5'>
           <Link to="/electronics">
             <div className=' hover:shadow-lg hover:drop-shadow-lg relative'>
               <p className='absolute font-semibold text-xl top-3 right-3'>Electronics</p>
@@ -102,7 +103,7 @@ const featured2 = useMemo(() => {
 
       {/* more to love */}
       <h1 className='text-center font-bold text-4xl pb-3'>More to love</h1>
-      <div className='grid grid-cols-2 lg:grid-cols-5 gap-2 p-10'>
+      <div className='grid grid-cols-2 lg:grid-cols-5 lg:gap-2 gap-5 lg:p-10 p-5'>
         {products.map((product)=>(
           <Link to={`/product/${product.id}`} key={product.id}>
             <CategoryCard key={product.id} {...product} />
@@ -114,7 +115,7 @@ const featured2 = useMemo(() => {
         <div>
           {/* <img src="https://i-serena.com/wp-content/uploads/2024/01/anua-banner.jpg" alt="" /> */}
           {/* <img src="https://blog.delivered.co.kr/wp-content/uploads/2024/10/beauty-of-joseon-featured.jpg" alt="" className='' /> */}
-          <img src="https://cdn.shopify.com/s/files/1/0515/4589/9157/files/4_35bc5c2b-1d9a-4234-9aa2-819b288a723a.png?v=1751857629" alt="" />
+          <img src="https://cdn.shopify.com/s/files/1/0515/4589/9157/files/4_35bc5c2b-1d9a-4234-9aa2-819b288a723a.png?v=1751857629" alt="" className='lg:h-fit h-50 ' />
         </div>
 
       {/* recommended for you */}
