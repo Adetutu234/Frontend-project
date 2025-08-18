@@ -49,7 +49,7 @@ const featured2 = useMemo(() => {
         <div className='bg-blue-300 lg:p-10 p-5 rounded-lg space-y-1'>
           <h1 className='font-bold text-3xl'>Diva</h1>
           <p className='font-semibold text-lg'>Your Fashion Choices</p>
-          <Button text='Shop now' className='text-white px-6 py-2 bg-black w-fit'/>
+          <Link to={'/clothes'}><Button text='Shop now' className='text-white px-6 py-2 bg-black w-fit'/></Link>
           {/* slice */}
           <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 pt-3 '>
             {clothes.slice(0, 3).map((clothe) => (

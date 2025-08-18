@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className='flex items-center'>
         {/* Mobile menu */}
         <div className='flex lg:hidden z-50'>
-          <List size={35} onClick={handleClick}/>
+          <List size={30} onClick={handleClick}/>
           <div className={`${click ? 'flex' : 'hidden'} absolute top-16 left-0 bg-white text-black w-full flex-col items-center gap-5 p-5`}>
             <Link to='/'>Home</Link>
             <Link to='/shop'>Shop</Link>
@@ -36,17 +36,18 @@ const Navbar = () => {
             <Link to='/shoes'>Shoes</Link>
             <Link to='/fitness'>Fitness</Link>
             <Link to='/sales'>Sales</Link>
+            <Link to='/cart'>Cart</Link>
           </div>
         </div>
 
         {/* Large screen menu */}
-        <div className='lg:flex hidden gap-5 ml-8'>
-          <div className='flex gap-2 items-center'>
+        <div className=' gap-5 ml-8'>
+          <div className='lg:flex hidden gap-2 items-center'>
             <User size={25} />
             <p>Account</p>
             <CaretDown size={15} />
           </div>
-          <div className='flex gap-2 items-center'>
+          <div className='lg:flex hidden gap-2 items-center'>
             <Question size={25} />
             <p>Help</p>
             <CaretDown size={15} />
@@ -58,7 +59,7 @@ const Navbar = () => {
                 {cartCount}
               </span>
             )}
-            <p>Cart</p>
+            <p className='lg:flex hidden'>Cart</p>
           </Link>
         </div>
       </div>
