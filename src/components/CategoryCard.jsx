@@ -15,7 +15,8 @@ const CategoryCard = ({image,price,name,id}) => {
             <div className='flex justify-between items-center p-1'>
               <p className='font-semibold text-xl'>{price}</p>
               {/* <p className='font-semibold text-sm'>{stock}</p> */}
-              <ShoppingCart size={22} className='text-orange-70' onClick={()=> addToCart(product)}/>
+              <ShoppingCart size={22} className='text-orange-70' onClick={()=> addToCart()}/>
+                
             </div>
             <p className='text-red-700 text-xs'>free shipping over NGN16,583.</p>
           </div>

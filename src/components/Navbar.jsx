@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         {/* Large screen menu */}
-        <div className=' gap-5 ml-8'>
+        <div className='flex gap-5 ml-8'>
           <div className='lg:flex hidden gap-2 items-center'>
             <User size={25} />
             <p>Account</p>
